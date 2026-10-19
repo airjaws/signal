@@ -7,6 +7,7 @@ import {
 } from "dialog-hooks"
 import React from "react"
 import { HelmetProvider } from "react-helmet-async"
+import { DevstudioBridge } from "../../devstudio/DevstudioBridge" // devstudio 포팅(R-J26) — 편집 명령 다리 window.__midi
 import { ArrangeViewProvider } from "../../features/arrange/hooks/useArrangeView"
 import { MIDIDeviceProvider } from "../../features/midi-device/hooks/useMIDIDevice"
 import { PianoRollProvider } from "../../features/piano-roll/context/PianoRollProvider"
@@ -47,6 +48,7 @@ export function App() {
                                     <ElectronCallbackHandler />
                                   )}
                                   <RootView />
+                                  <DevstudioBridge />
                                 </TempoEditorProvider>
                               </ArrangeViewProvider>
                             </PianoRollProvider>
